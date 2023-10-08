@@ -1,0 +1,65 @@
+---
+// import {getCollection, CollectionEntry, getEntryBySlug} from "astro:content"
+import { getCollection, type CollectionEntry } from "astro:content"
+
+// import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro'
+import Main from "../../components/Main.astro";
+import H1 from "../../components/H1.astro";
+import PostTOC from "../../components/PostTOC.astro";
+import PostShare from "../../components/PostShare.astro"
+// import {Image} from "astro:assets"
+
+
+export const getStaticPaths = async () => {
+  const posts = await getCollection("posts");
+  
+  const paths = posts.map(post=> {
+    return {
+      params: {
+        slug: post.slug
+      },
+      props: {
+        post
+      }
+    }
+  })
+  return paths;
+}
+
+type Props = {
+    post: CollectionEntry<"posts">
+}
+// NOTE: Astro looks for [slug].astro ?!? later...
+const { post } = Astro.props;
+
+const {Content, headings} = await post.render();
+console.log(headings)
+---
+
+<Layout title={post.data.title}>
+  <Main>
+      <a href="/blog" class="text-zinc-500 text-2xl mb-16 underline block"
+      >&larr; Back to all blogs</a>
+      
+      <H1 text={post.data.title} />
+
+      <p>{post.data.author}</p>
+      
+      <img
+      src={post.data.image}
+      alt={post.data.title}
+      width={1024}
+      height={1024 / 2}
+      format="webp"
+      class="rounded-2xl shadow-xl mb-28 aspect-thumbnail object-cover"
+      />
+      <div class="relative flex gap-x-12">
+        <PostShare post={post}/>
+        <div class="prose prose-2xl overflow-visible relative mb-20">
+          <Content />
+        </div>
+        <PostTOC headings={headings} />
+      </div>
+  </Main>
+</Layout>

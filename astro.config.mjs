@@ -8,5 +8,8 @@ export default defineConfig({
     // this is the astro3 default port anyway
     port: 4321
   },
+  redirects: {
+    '/blog': '/blog/1'
+  },
   integrations: [tailwind()]
 });
