@@ -11,5 +11,6 @@ export default defineConfig({
   redirects: {
     '/blog': '/blog/1'
   },
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  site: "https://rhythm.nation",
 });

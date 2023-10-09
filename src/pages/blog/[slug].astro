@@ -37,23 +37,27 @@ const {Content, headings} = await post.render();
 console.log(headings)
 ---
 
-<Layout title={post.data.title}>
+<Layout title={post.data.title} image={post.data.image} description={post.data.description}>
   <Main>
       <a href="/blog" class="text-zinc-500 text-2xl mb-16 underline block"
       >&larr; Back to all blogs</a>
       
       <H1 text={post.data.title} />
 
-      <p>{post.data.author}</p>
-      
-      <img
-      src={post.data.image}
-      alt={post.data.title}
-      width={1024}
-      height={1024 / 2}
-      format="webp"
-      class="rounded-2xl shadow-xl mb-28 aspect-thumbnail object-cover"
-      />
+      <div class="flex flex-wrap">
+        <p class="flex-auto">{post.data.author}</p>
+        <p class="flex-auto text-right">{post.data.date}</p>
+  
+        <img
+        class="flex-auto rounded-2xl shadow-xl mb-28 aspect-thumbnail object-cover"
+        src={post.data.image}
+        alt={post.data.title}
+        width={1024}
+        height={1024 / 2}
+        props.format="webp"
+        />
+      </div>
+
       <div class="relative flex gap-x-12">
         <PostShare post={post}/>
         <div class="prose prose-2xl overflow-visible relative mb-20">
@@ -61,5 +65,6 @@ console.log(headings)
         </div>
         <PostTOC headings={headings} />
       </div>
+
   </Main>
 </Layout>
