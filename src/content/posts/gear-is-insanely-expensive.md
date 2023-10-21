@@ -1,6 +1,6 @@
 ---
 author: dwight-schrute
-categories: ["career advice"]
+categories: ["career advice", "studio tips"]
 date: 08/10/2021
 featured: false
 image: /images/gear.jpg

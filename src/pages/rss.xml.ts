@@ -1,7 +1,10 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import type { APIContext } from 'astro';
+import MarkdownIt from "markdown-it";
+import sanitizeHtml from "sanitize-html";
 
+const parser = new MarkdownIt();
 export async function GET(context: APIContext) {
   const posts = await getCollection('posts');
   return rss({
@@ -15,6 +18,8 @@ export async function GET(context: APIContext) {
       // Compute RSS link from post `slug`
       // This example assumes all posts are rendered as `/blog/[slug]` routes
       link: `/blog/${post.slug}/`,
+      content: sanitizeHtml(parser.render(post.body)),
+      image: post.data.image,
     })),
   });
 }

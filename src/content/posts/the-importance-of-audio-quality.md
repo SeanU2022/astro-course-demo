@@ -1,6 +1,6 @@
 ---
 author: pam-beesely
-categories: ["insights"]
+categories: ["insights", "studio tips"]
 date: 08/10/2021
 featured: false
 image: /images/speaker.jpg

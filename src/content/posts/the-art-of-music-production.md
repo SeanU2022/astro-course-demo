@@ -1,6 +1,6 @@
 ---
 author: michael-scott
-categories: ["latest", "insights"]
+categories: ["latest", "insights", "studio tips"]
 date: 08/10/2021
 featured: true
 image: /images/producer.jpg

@@ -1,0 +1,83 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+import Layout from '../../layouts/Layout.astro';
+import Main from "../../components/Main.astro";
+import H1 from "../../components/H1.astro";
+import H1new from "../../components/H1new.astro";
+import PostList from '../../components/PostList.astro';
+import Pagination from '../../components/Pagination.astro';
+import CategoryList from "../../components/CategoryList.astro";
+import BackToAllBlogs from "../../components/BackToAllBlogs.astro";
+
+import type { Page } from "astro";
+
+export const getStaticPaths = async () => {
+  const posts = await getCollection("posts");
+  // next 2 lines: version 1 and version 2
+  // const allCategories = posts.flatMap(post => post.data.categories);
+  const allCategories = posts.flatMap((post: { data: { categories: any; }; }) => post.data.categories);
+  const categories = Array.from(new Set(allCategories));
+
+  const paths = categories.map(category => {
+    const postsByCategory = posts.filter (post => post.data.categories.includes (category))
+    return {
+      params: {
+        seanDynamicRoutePage: category,
+      },
+      props: {
+        category,
+        posts: postsByCategory,
+      },
+    }
+  })
+
+  return paths;
+  // return paths (posts, {pageSize: 4});
+};
+
+type Props = {
+  page: Page;
+  category: string;
+  posts: CollectionEntry<"posts">[]
+}
+
+const { page, category, posts } = Astro.props;
+---
+<Layout title="Blog | Rhythm Nation Blog">
+	<Main>
+
+    <BackToAllBlogs />
+    <!-- <a href="/blog" class="text-zinc-500 text-2xl mb-16 underline block"
+    >&larr; Back to all blogs from category filter</a> -->
+
+    <H1new customText="[seanDynamicRoutePage].astro with Filter but no pagination"></H1new>
+		<!-- <H1 text="Rythm Nation Blog Page - Paginated(error) - Filtered"></H1>
+		<p class="text-zinc-900 text-2xl mb-24 max-sm:mb-14">
+			Join the Community and learn from Music Producers and Enthusiasts
+		</p> -->
+
+    <div class="grid grid-flow-col gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1">
+      <h2 class="font-bold text-5xl text-teal-900">Tags</h2>
+      <CategoryList categories={[category]}/>
+    </div>
+
+    <!-- <div class="grid-cols-[auto,1fr] gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1"> -->
+      <!-- THIS DIV IS NOT WORKING AS IT STILL JUMPS DOWN -->
+      <!-- <h2 class="font-bold text-5xl text-teal-900">Tags</h2> -->
+      <!-- <CategoryList categories={categories}/> -->
+    <!-- </div> -->
+
+    <div class="mb-12">
+      <!-- PAGINATION QUICK FIX TO AVOID undefined, void, pending in 2nd line -->
+      <Pagination prevURL={page?.url?.prev} nextURL={page?.url?.next}/>
+      <!-- <Pagination prevURL={page?.url?.prev} nextURL={page?.url?.next}/> -->
+    </div>  
+    <PostList posts={posts} />		
+    <div class="mb-24">
+      <Pagination prevURL={page?.url?.prev} nextURL={page?.url?.next}/>
+      <!-- <Pagination prevURL={page?.url?.prev} nextURL={page?.url?.next}/> -->
+    </div>
+
+	</Main>
+</Layout>

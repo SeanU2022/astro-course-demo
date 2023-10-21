@@ -1,0 +1,15 @@
+---
+type Props = {
+  customText: string;
+};
+const { customText } = Astro.props;
+---
+
+<h1 class="text-6xl text-teal-900 font-bold mb-5">Rhythm Nation Blog</h1>
+<p class="text-zinc-900 text-2xl mb-24 max-sm:mb-14">
+  Join the community and learn from Music Producers and Enthusiasts
+</p>
+<p>
+  {customText}
+</p>
+<br>
