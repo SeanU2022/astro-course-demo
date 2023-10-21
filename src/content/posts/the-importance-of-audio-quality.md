@@ -1,8 +1,8 @@
 ---
 author: pam-beesely
 categories: ["insights", "studio tips"]
-date: 08/10/2021
-featured: false
+date: 08/24/2022
+featured: true
 image: /images/speaker.jpg
 title: The importance of audio quality
 description: Lorem ipsum 9999999999
