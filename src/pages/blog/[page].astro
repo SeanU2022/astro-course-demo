@@ -33,11 +33,7 @@ const categories = Array.from(new Set(allCategories));
 			Join the Community and learn from Music Producers and Enthusiasts[from [page].astro]
 		</p> -->
 
-      <div class="grid grid-flow-col gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1">
-        <h2 class="font-bold text-5xl text-teal-900">Tags</h2>
-        <CategoryList categories={categories}/>
-      </div>
-
+    <CategoryList categories={categories} categoriesGroupName="Tags"/>
 
     <!-- <div class="grid-cols-[auto,1fr] gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1"> -->
       <!-- THIS DIV IS NOT WORKING AS IT STILL JUMPS DOWN -->

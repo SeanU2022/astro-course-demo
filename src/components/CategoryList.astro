@@ -3,11 +3,16 @@ import type {CollectionEntry} from "astro:content"
 import Category from "./Category.astro"
 type Props = {
     categories: CollectionEntry<"posts">["data"]["categories"]
+    categoriesGroupName?: string
 }
 
-const {categories} = Astro.props
+const {categories, categoriesGroupName} = Astro.props
 ---
-
+<div class="grid grid-flow-col gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1">
+  {categoriesGroupName &&
+    <h2 class="font-bold text-5xl text-teal-900">{categoriesGroupName}</h2>
+  }
+</div>
 <!-- V1 {categories.map(category => <p>{category}</p> )} -->
 <div class="flex gap-4 flex-wrap items-center">
   {categories.map(category => <Category category={category} />)}

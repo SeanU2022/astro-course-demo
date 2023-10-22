@@ -57,10 +57,12 @@ const { page, category, posts } = Astro.props;
 			Join the Community and learn from Music Producers and Enthusiasts
 		</p> -->
 
-    <div class="grid grid-flow-col gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1">
+    <!-- <div class="grid grid-flow-col gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1">
       <h2 class="font-bold text-5xl text-teal-900">Tags</h2>
       <CategoryList categories={[category]}/>
-    </div>
+    </div> -->
+    <CategoryList categories={[category]} categoriesGroupName="Posts tagged with..."/>
+
 
     <!-- <div class="grid-cols-[auto,1fr] gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1"> -->
       <!-- THIS DIV IS NOT WORKING AS IT STILL JUMPS DOWN -->

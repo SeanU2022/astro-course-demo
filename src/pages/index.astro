@@ -5,10 +5,14 @@ import H1new from "../components/H1new.astro";
 import Main from "../components/Main.astro";
 import Layout from '../layouts/Layout.astro';
 import FeaturedPost from "../components/FeaturedPost.astro";
+import CategoryList from "../components/CategoryList.astro";
+import PostList from "../components/PostList.astro";
 
 const allPosts = await getCollection("posts");
 const featuredPosts = allPosts.filter(post => post.data.featured);
 const posts = allPosts.filter(post => !post.data.featured).slice(0,4);
+const allCategories = posts.flatMap(post => post.data.categories);
+const categories = Array.from(new Set(allCategories));
 ---
 
 <Layout title="Astro Rhythm Nation">
@@ -23,7 +27,17 @@ const posts = allPosts.filter(post => !post.data.featured).slice(0,4);
 			{ featuredPosts.map(post => <FeaturedPost post={post}/>) }
 
 			<hr class="w-full border border-teal-900 mb-16 max-sm:mb-10">
-			<a href="/blog" class="text-teal-900 text-4xl font-bold">Jump in!</a>
+
+      <CategoryList categories={categories} categoriesGroupName="Recent Posts"/>
+
+			<div class="mb-32">
+				<PostList posts={posts} />
+			</div>
+
+			<div class="flex justify-end mb-60 max-sm:mb-36">
+				<a href="/blog" class="bg-teal-900 text-white py-3 px-6 rounded-xl text-xl">Jump in!</a>
+			</div>
+
 	</Main>
 
 </Layout>
