@@ -15,7 +15,7 @@ const allCategories = posts.flatMap(post => post.data.categories);
 const categories = Array.from(new Set(allCategories));
 ---
 
-<Layout title="Astro Rhythm Nation">
+<Layout title="Rhythm Nation title">
 	<!-- <main class="px-24 max-sm:px-5 max-w-7xl mx-auto w-full"> -->
 	<Main>
 		<!-- <h1 class="text-6xl text-teal-800 font-bold mb-5">Rhythm Nation Blog</h1> -->
@@ -24,6 +24,8 @@ const categories = Array.from(new Set(allCategories));
 			<!-- <p class="text-zinc-900 text-2xl mb-24 max-sm:mb-14">
 				Join the community and learn from Music Producers and Enthusiasts[from index.astro]
 			</p> -->
+
+			<!-- FRIDAY -->
 			{ featuredPosts.map(post => <FeaturedPost post={post}/>) }
 
 			<hr class="w-full border border-teal-900 mb-16 max-sm:mb-10">

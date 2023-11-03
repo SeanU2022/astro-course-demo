@@ -1,9 +1,10 @@
 ---
 author: michael-scott
 categories: ["studio tips"]
-date: 08/10/2021
+date: 09/21/2021
 featured: false
-image: /images/drums.jpg
+image: ./images/drums.jpg
+imageAlt: Drums
 title: Tune your snare drum
 description: Lorem ipsum 101010101010
 ---

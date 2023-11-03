@@ -1,9 +1,10 @@
 ---
 author: dwight-schrute
 categories: ["studio tips"]
-date: 08/10/2021
+date: 01/25/2021
 featured: false
-image: /images/photoshoot.jpg
+image: ./images/photoshoot.jpg
+imageAlt: Behind the scenes photoshoot
 title: Behind-the-scenes with our artists
 description: Lorem ipsum 111111111111
 ---

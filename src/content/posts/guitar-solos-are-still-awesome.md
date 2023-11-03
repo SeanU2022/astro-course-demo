@@ -1,9 +1,10 @@
 ---
 author: jim-halpert
 categories: ["career advice"]
-date: 08/10/2021
+date: 04/23/2021
 featured: false
-image: /images/guitarist.jpg
+image: ./images/guitarist.jpg
+imageAlt: A Guitar
 title: Guitar solos are still awesome
 description: Lorem ipsum 55555555555
 ---

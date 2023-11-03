@@ -1,16 +1,25 @@
 ---
 import { type CollectionEntry } from "astro:content"
 import {Image} from "astro:assets"
+// import myImage from "src/content/posts/Ximages/cloudSquare.jpg"
+// import myImage from "../content/posts/X2images/cloudSquare.jpg"
 
 import CategoryList from "./CategoryList.astro"
 
 type Props = {
     post: CollectionEntry<"posts">
+    featuredPostsGroupName?: string
 }
 
 const {post} = Astro.props
+// import theImage from `${post,data,image}`
+// import image into variable?
+// look at images and Ximages folders for right location so as not to crash
+// ??? ??? ??? import xxx from post.data.image;
 ---
-
+<!-- src={xxx} -->
+<!-- src={myImage} -->
+<!-- src={post.data.image} -->
 <article class="grid grid-cols-2 gap-x-12 gap-y-5 mb-28 max-lg:grid-cols-1 max-sm:mb-12">
     <a href={`/blog/${post.slug}`}>
         <Image

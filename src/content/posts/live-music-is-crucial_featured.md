@@ -1,11 +1,12 @@
 ---
-author: michael-scott
-categories: ["latest", "insights", "studio tips"]
-date: 08/10/2021
-featured: true
-image: /images/producer.jpg
-title: The art of music production
-description: Lorem ipsum 8888888888
+author: jim-halpert
+categories: ["insights"]
+date: 05/23/2021
+featured: false
+image: ./images/concert.jpg
+imageAlt: Music concert
+title: Live music is crucial
+description: Lorem ipsum 666666666666
 ---
 
 Collaboration is a key component of many creative endeavors, and music production is no exception. In fact, collaboration can be essential to the success of a music project, as it allows for the pooling of diverse talents and perspectives to create something truly unique and compelling.

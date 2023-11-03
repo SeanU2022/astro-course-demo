@@ -1,11 +1,12 @@
 ---
-author: dwight-schrute
-categories: ["career advice", "studio tips"]
-date: 08/10/2021
-featured: false
-image: /images/gear.jpg
-title: Gear is insanely expensive
-description: Lorem ipsum 4444444444444
+author: michael-scott
+categories: ["latest", "insights", "studio tips"]
+date: 06/22/2021
+featured: true
+image: ./images/producer.jpg
+imageAlt: Music being produced
+title: The art of music production
+description: Lorem ipsum 8888888888
 ---
 
 Collaboration is a key component of many creative endeavors, and music production is no exception. In fact, collaboration can be essential to the success of a music project, as it allows for the pooling of diverse talents and perspectives to create something truly unique and compelling.

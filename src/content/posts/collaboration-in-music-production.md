@@ -1,9 +1,10 @@
 ---
 author: michael-scott
 categories: ["studio tips"]
-date: 08/10/2021
+date: 02/25/2021
 featured: false
-image: /images/band.jpg
+image: ./images/band.jpg
+imageAlt: Collaboration by band
 title: Collaboration in music production
 description: Lorem ipsum 22222222222
 ---

@@ -1,9 +1,10 @@
 ---
 author: dwight-schrute
 categories: ["studio tips"]
-date: 08/10/2021
-featured: false
-image: /images/studio.jpg
+date: 07/22/2021
+featured: true
+image: ./images/studio.jpg
+imageAlt: Home recording studio
 title: Making a home studio
 description: Lorem ipsum 777777777
 ---

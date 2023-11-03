@@ -9,7 +9,8 @@ import H1 from "../../components/H1.astro";
 import PostTOC from "../../components/PostTOC.astro";
 import PostShare from "../../components/PostShare.astro"
 import BackToAllBlogs from "../../components/BackToAllBlogs.astro";
-// import {Image} from "astro:assets"
+import {Image} from "astro:assets"
+// import xxx from "../images/speaker.jpg";
 
 
 export const getStaticPaths = async () => {
@@ -34,6 +35,10 @@ type Props = {
 // NOTE: Astro looks for [slug].astro ?!? later...
 const { post } = Astro.props;
 
+// FRIDAY
+const YYY = post.data.image
+// import XXX from YYY
+
 const {Content, headings} = await post.render();
 console.log(headings)
 ---
@@ -52,7 +57,8 @@ console.log(headings)
         <p class="flex-auto">{post.data.author}</p>
         <p class="flex-auto text-right">{post.data.date}</p>
   
-        <img
+        <!-- FRIDAY -->
+        <!-- <Image
         class="flex-auto rounded-2xl shadow-xl mb-28 aspect-thumbnail object-cover"
         src={post.data.image}
         alt={post.data.title}
@@ -60,7 +66,7 @@ console.log(headings)
         height={1024 / 2}
         props.format="webp"
         />
-      </div>
+      </div> -->
 
       <div class="relative flex gap-x-12">
         <PostShare post={post}/>
